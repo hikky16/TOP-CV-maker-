@@ -9,6 +9,8 @@ function BasicInfoField({ basicinfo, handleChange }) {
             type="text"
             placeholder="First Name"
             name="firstName"
+            data-custom-value="basicinfo"
+            className="input-field"
             value={basicinfo.firstname}
             onChange={handleChange}
           />
@@ -19,6 +21,8 @@ function BasicInfoField({ basicinfo, handleChange }) {
             type="text"
             placeholder="Last Name"
             name="lastName"
+            data-custom-value="basicinfo"
+            className="input-field"
             value={basicinfo.lastname}
             onChange={handleChange}
           />
@@ -29,6 +33,8 @@ function BasicInfoField({ basicinfo, handleChange }) {
             type="text"
             placeholder="Professional Title"
             name="profTitle"
+            data-custom-value="basicinfo"
+            className="input-field"
             value={basicinfo.profTitle}
             onChange={handleChange}
           />
@@ -38,6 +44,8 @@ function BasicInfoField({ basicinfo, handleChange }) {
           <textarea
             placeholder="Give a brief description about your self"
             name="aboutYou"
+            data-custom-value="basicinfo"
+            className="textarea-field"
             value={basicinfo.aboutYou}
             onChange={handleChange}
           />

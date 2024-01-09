@@ -6,27 +6,61 @@ import { useState } from "react";
 function App() {
   const [formData, setFormData] = useState({
     basicinfo: {
-      firstName: "Guest",
-      lastName: "Awesome",
-      profTitle: "Doctor of Social Media",
-      aboutYou: "Hello I am the bestest there ever was",
+      firstName: "",
+      lastName: "",
+      profTitle: "",
+      aboutYou: "",
     },
+    contactinfo: {
+      email: "",
+      phone: "",
+      location: "",
+      website: "",
+    },
+    education: [],
   });
 
-  const handleBasicInfo = (e) => {
+  const handleInfoChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
+    const dataset = e.target.dataset.customValue;
 
     setFormData((f) => ({
       ...f,
-      basicinfo: { ...f.basicinfo, [name]: value },
+      [dataset]: { ...f[dataset], [name]: value },
     }));
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const formType = e.target.dataset.customValue;
+    const fomData = new FormData(e.target);
+
+    console.log(e.target);
+
+    const recivedData = {};
+
+    fomData.forEach((value, key) => {
+      recivedData[key] = value;
+    });
+
+    console.log(recivedData);
+    setFormData((f) => ({
+      ...f,
+      [formType]: [...f[formType], recivedData],
+    }));
+
+    console.log(formData);
   };
 
   return (
     <>
       <div className="editor-container">
-        <Editor formData={formData} handleChange={handleBasicInfo} />
+        <Editor
+          formData={formData}
+          handleChange={handleInfoChange}
+          handleFormSubmit={handleFormSubmit}
+        />
       </div>
       <hr />
       <hr />
