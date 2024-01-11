@@ -36,12 +36,11 @@ function App() {
     const formType = e.target.dataset.customValue;
     const fomData = new FormData(e.target);
 
-    console.log(e.target);
-
     const recivedData = {};
 
     fomData.forEach((value, key) => {
       recivedData[key] = value;
+      e.target[key].value = "";
     });
 
     console.log(recivedData);
@@ -49,8 +48,15 @@ function App() {
       ...f,
       [formType]: [...f[formType], recivedData],
     }));
+  };
 
-    console.log(formData);
+  const handleDeleteForm = (e) => {
+    const formType = e.target.dataset.formType;
+    const indexValue = e.target.dataset.indexValue;
+    setFormData((f) => ({
+      ...f,
+      [formType]: [...f[formType].splice(indexValue, 1)],
+    }));
   };
 
   return (
@@ -60,6 +66,8 @@ function App() {
           formData={formData}
           handleChange={handleInfoChange}
           handleFormSubmit={handleFormSubmit}
+          handleDeleteForm={handleDeleteForm}
+          setFormData={setFormData}
         />
       </div>
       <hr />

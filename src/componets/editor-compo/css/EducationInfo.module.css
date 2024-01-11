@@ -1,0 +1,20 @@
+.inputField {
+  border-radius: 10px;
+  width: 500px;
+  height: 80px;
+  padding-inline: 50px;
+  display: block;
+  font-size: 20px;
+}
+
+.edItem {
+  padding: 3px;
+  border-radius: 5px;
+  max-width: 5px;
+  height: 50px;
+  border: 1px solid black;
+  margin-right: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  font-size: medium;
+}
