@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "./css/EducationInfo.module.css";
+import genStyles from "./css/GeneralCss.module.css";
+import circlePlus from "./icons/plus-circle.svg";
 
 function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
   const [OnGoing, setOnGoing] = useState(false);
@@ -38,18 +40,14 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
     setOnGoing(e.target.checked);
   };
 
-  const showOnGoing = (
-    <input type="month" name="endDate" defaultValue={formattedDate} hidden />
-  );
-
   const showNotOnGoing = (
-    <div>
-      <span>Graduated: </span>
+    <div className={genStyles.inputFieldContainer}>
+      <span className={genStyles.inputLabel}>Graduated: </span>
       <input
         value={endDateValue}
         type="month"
         name="endDate"
-        className={styles.inputField}
+        className={genStyles.inputField}
         onChange={handleEndDateValue}
         required
       />
@@ -104,18 +102,38 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
     });
   };
 
+  const hoverIn = (e) => {
+    const classArray = e.target.className.split(" ");
+    if (classArray.includes("bi-pencil")) {
+      e.target.className = "bi bi-pencil-fill";
+    } else {
+      e.target.className = "bi bi-trash-fill";
+    }
+  };
+
+  const hoverOut = (e) => {
+    const classArray = e.target.className.split(" ");
+    if (classArray.includes("bi-pencil-fill")) {
+      e.target.className = "bi bi-pencil";
+    } else {
+      e.target.className = "bi bi-trash";
+    }
+  };
+
   return (
     <form data-custom-value="education" onSubmit={handleSubmit}>
       <h3>Education Background</h3>
       {educationItems
         ? educationItems.map((element, index) => (
-            <div>
+            <div className={styles.edItems}>
               <span>{element.school}</span>
               <i
                 className="bi bi-pencil"
                 data-index-value={index}
                 data-form-type="education"
                 onClick={handleEditForm}
+                onMouseEnter={hoverIn}
+                onMouseLeave={hoverOut}
               ></i>
               /
               <i
@@ -123,47 +141,49 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
                 data-index-value={index}
                 data-form-type="education"
                 onClick={handleDeleteForm}
+                onMouseEnter={hoverIn}
+                onMouseLeave={hoverOut}
               ></i>
             </div>
           ))
         : ""}
-      <fieldset>
-        <div>
-          <span>School: </span>
+      <fieldset className={genStyles.fieldSet}>
+        <div className={genStyles.inputFieldContainer}>
+          <span className={genStyles.inputLabel}>School: </span>
           <input
             value={schoolValue}
             type="text"
             required
             placeholder="School"
             name="school"
-            className={styles.inputField}
+            className={genStyles.inputField}
             onChange={handleSchoolValue}
           />
         </div>
-        <div>
-          <span>Degree: </span>
+        <div className={genStyles.inputFieldContainer}>
+          <span className={genStyles.inputLabel}>Degree: </span>
           <input
             value={degreeValue}
             type="text"
             required
             placeholder="Degree"
             name="degree"
-            className={styles.inputField}
+            className={genStyles.inputField}
             onChange={handleDegreeValue}
           />
         </div>
-        <div>
-          <span>Starting Year: </span>
+        <div className={genStyles.inputFieldContainer}>
+          <span className={genStyles.inputLabel}>Starting Year: </span>
           <input
             value={startDateValue}
             type="month"
             name="startDate"
-            className={styles.inputField}
+            className={genStyles.inputField}
             required
             onChange={handleStartDateValue}
           />
         </div>
-        <div>
+        <div className={genStyles.inputFieldContainer}>
           <span>OnGoing </span>
           <input
             type="checkbox"
@@ -173,13 +193,13 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
             onChange={handleOnGoing}
           />
         </div>
-        {OnGoing ? showOnGoing : showNotOnGoing}
+        {OnGoing ? "" : showNotOnGoing}
         <input value={addInfo} name="addInfo" hidden />
-        <div>
+        <div className={genStyles.inputFieldContainer}>
           <span>Additional Info(Awards,etc): </span>
-          <div>
+          <div className={styles.addinfoContainer}>
             {addInfo.map((item, index) => (
-              <span key={index} className={styles.edItem}>
+              <span key={index} className={styles.addinfo}>
                 {item}{" "}
                 <i
                   className="bi bi-trash"
@@ -189,17 +209,23 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
               </span>
             ))}
           </div>
-          <div>
+          <div className={styles.addinfoInputContainer}>
             <input
               type="text"
               value={addInfoValue}
-              className={styles.inputField}
+              className={genStyles.inputField}
               onChange={handleAddInfoValue}
             />
-            <i className="bi bi-plus-circle-fill" onClick={handleAddInfo}></i>
+            <img
+              src={circlePlus}
+              onClick={handleAddInfo}
+              className={styles.circleImage}
+            />
           </div>
         </div>
-        <button type="submitt">Submitt</button>
+        <button type="submitt" className={genStyles.button}>
+          Submitt
+        </button>
       </fieldset>
     </form>
   );

@@ -1,52 +1,54 @@
+import genStyles from "./css/GeneralCss.module.css";
+
 function ContactInfoField({ contactinfo, handleChange }) {
   return (
     <form>
       <h1>Contact Information</h1>
-      <fieldset>
-        <div>
-          <span>Email Address: </span>
+      <fieldset className={genStyles.fieldSet}>
+        <div className={genStyles.infoFieldContainer}>
+          <span className={genStyles.inputLabel}>Email Address: </span>
           <input
             type="text"
             placeholder="Email"
             name="email"
             data-custom-value="contactinfo"
-            className="input-field"
+            className={genStyles.inputField}
             value={contactinfo.email}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <span>Phone Number: </span>
+        <div className={genStyles.infoFieldContainer}>
+          <span className={genStyles.inputLabel}>Phone Number: </span>
           <input
             type="text"
             placeholder="Phone"
             name="phone"
             data-custom-value="contactinfo"
-            className="input-field"
+            className={genStyles.inputField}
             value={contactinfo.phone}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <span>Address: </span>
+        <div className={genStyles.infoFieldContainer}>
+          <span className={genStyles.inputLabel}>Address: </span>
           <input
             type="text"
-            placeholder="address"
+            placeholder="Address"
             name="location"
             data-custom-value="contactinfo"
-            className="input-field"
+            className={genStyles.inputField}
             value={contactinfo.location}
             onChange={handleChange}
           />
         </div>
-        <div>
-          <span>Website: </span>
+        <div className={genStyles.infoFieldContainer}>
+          <span className={genStyles.inputLabel}>Website: </span>
           <input
             type="text"
             placeholder="Website"
             name="website"
             data-custom-value="contactinfo"
-            className="input-field"
+            className={genStyles.inputField}
             value={contactinfo.website}
             onChange={handleChange}
           />
