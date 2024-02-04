@@ -1,14 +1,10 @@
 import BasicInfoField from "./editor-compo/BasicInfoField";
 import ContactInfoField from "./editor-compo/ContactInfoField";
 import EducationInfoField from "./editor-compo/EducationInfoField";
+import WorkInfoField from "./editor-compo/WorkInfoField";
+import SkillsInfoField from "./editor-compo/SkillsInfoField";
 
-function Editor({
-  formData,
-  handleChange,
-  handleFormSubmit,
-  handleDeleteForm,
-  setFormData,
-}) {
+function Editor({ formData, handleChange, handleFormSubmit, setFormData }) {
   return (
     <>
       <h1>CV Generator</h1>
@@ -25,16 +21,20 @@ function Editor({
       <EducationInfoField
         handleFormSubmit={handleFormSubmit}
         educationItems={formData.education}
-        handleDeleteForm={handleDeleteForm}
         setFormData={setFormData}
       />
       <hr />
-      <h3>Work Experience</h3>
+      <WorkInfoField
+        handleFormSubmit={handleFormSubmit}
+        workItems={formData.work}
+        setFormData={setFormData}
+      />
       <hr />
-      <h3>Skills and Trainings</h3>
-      <hr />
-      <h3>Other Info</h3>
-      <hr />
+      <SkillsInfoField
+        handleFormSubmit={handleFormSubmit}
+        skillItems={formData.skills}
+        setFormData={setFormData}
+      />
     </>
   );
 }

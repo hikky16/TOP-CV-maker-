@@ -18,6 +18,8 @@ function App() {
       website: "",
     },
     education: [],
+    work: [],
+    skills: [],
   });
 
   const handleInfoChange = (e) => {
@@ -48,6 +50,8 @@ function App() {
       ...f,
       [formType]: [...f[formType], recivedData],
     }));
+
+    console.log(formData);
   };
 
   const handleDeleteForm = (e) => {
@@ -70,8 +74,6 @@ function App() {
           setFormData={setFormData}
         />
       </div>
-      <hr />
-      <hr />
       <div className="ccv-container">
         <ViewForm formData={formData} />
       </div>

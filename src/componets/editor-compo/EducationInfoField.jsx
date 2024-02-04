@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./css/EducationInfo.module.css";
 import genStyles from "./css/GeneralCss.module.css";
 import circlePlus from "./icons/plus-circle.svg";
@@ -196,7 +196,9 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
         {OnGoing ? "" : showNotOnGoing}
         <input value={addInfo} name="addInfo" hidden />
         <div className={genStyles.inputFieldContainer}>
-          <span>Additional Info(Awards,etc): </span>
+          <span>
+            <strong>Additional Info(Awards,etc): </strong>
+          </span>
           <div className={styles.addinfoContainer}>
             {addInfo.map((item, index) => (
               <span key={index} className={styles.addinfo}>
@@ -213,6 +215,7 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
             <input
               type="text"
               value={addInfoValue}
+              placeholder="Add additional informations here"
               className={genStyles.inputField}
               onChange={handleAddInfoValue}
             />
@@ -223,8 +226,8 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
             />
           </div>
         </div>
-        <button type="submitt" className={genStyles.button}>
-          Submitt
+        <button type="submit" className={genStyles.button}>
+          Submit
         </button>
       </fieldset>
     </form>

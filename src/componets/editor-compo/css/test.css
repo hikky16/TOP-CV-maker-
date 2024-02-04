@@ -1,0 +1,11 @@
+.transition-container {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+.transition-container.show {
+  opacity: 1;
+  max-height: 500px; /* Set an appropriate max-height value */
+}

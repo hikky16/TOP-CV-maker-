@@ -3,7 +3,7 @@ import genStyles from "./css/GeneralCss.module.css";
 function ContactInfoField({ contactinfo, handleChange }) {
   return (
     <form>
-      <h1>Contact Information</h1>
+      <h3>Contact Information</h3>
       <fieldset className={genStyles.fieldSet}>
         <div className={genStyles.infoFieldContainer}>
           <span className={genStyles.inputLabel}>Email Address: </span>

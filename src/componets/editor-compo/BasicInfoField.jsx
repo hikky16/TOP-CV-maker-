@@ -1,9 +1,9 @@
+import { useState } from "react";
 import genStyles from "./css/GeneralCss.module.css";
 
 function BasicInfoField({ basicinfo, handleChange }) {
-  return (
+  const fieldContent = (
     <form>
-      <h1>Basic Information</h1>
       <fieldset className={genStyles.fieldSet}>
         <div className={genStyles.infoFieldContainer}>
           <span className={genStyles.inputLabel}>First Name: </span>
@@ -54,6 +54,13 @@ function BasicInfoField({ basicinfo, handleChange }) {
         </div>
       </fieldset>
     </form>
+  );
+
+  return (
+    <div>
+      <h3>Basic Information</h3>
+      {fieldContent}
+    </div>
   );
 }
 

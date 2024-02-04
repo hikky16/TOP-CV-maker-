@@ -1,0 +1,69 @@
+.workItems-container {
+  display: flex;
+}
+
+.workItem {
+  display: flex;
+  width: 80px;
+  height: 26px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.workItem:hover {
+  background-color: rgb(42, 161, 161);
+}
+
+.workItem-name {
+  margin-right: auto;
+}
+
+.dutiesItems-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.dutiesItem {
+  display: flex;
+  width: 80px;
+  height: 26px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.dutiesItem:hover {
+  background-color: rgb(42, 161, 161);
+}
+
+.dutiesItem-name {
+  margin-right: auto;
+}
+
+.dutiesInput-container {
+  display: flex;
+  column-gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.bi.bi-trash {
+  cursor: pointer;
+}
+
+.bi.bi-pencil {
+  cursor: pointer;
+}
+
+.cirlce-image {
+  align-self: center;
+  cursor: pointer;
+  height: fit-content;
+}

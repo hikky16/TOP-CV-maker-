@@ -1,0 +1,35 @@
+.editor-container {
+  flex: 1;
+  height: 100vh; /* Set the height of the first div as needed */
+  overflow-y: auto;
+  width: fit-content;
+  background-color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.editor-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+.editor-container::-webkit-scrollbar-thumb {
+  background-color: grey;
+  border-radius: 100vw;
+}
+
+.editor-container::-webkit-scrollbar-track {
+  background-color: hsl(0, 0%, 70%);
+  border-radius: 100vw;
+}
+
+.ccv-container {
+  background-color: rgb(255, 255, 255);
+  padding: 30px;
+  box-shadow: 5px 5px 10px hsl(0, 0%, 39%);
+  width: 750px;
+  height: 1122.52px;
+  margin: 10px;
+}
