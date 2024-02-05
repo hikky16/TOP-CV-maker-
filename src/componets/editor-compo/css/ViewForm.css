@@ -8,10 +8,12 @@
 
 .basicinfo-fullname {
   font-size: 40px;
+  color: hsl(197, 88%, 36%)
 }
 
 .basicinfo-profTitle {
   font-size: 20px;
+  color: hsl(197, 88%, 55%)
 }
 
 .basicinfo-about {
@@ -23,6 +25,17 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+}
+
+.educationinfo-container h3 {
+  color: hsl(197, 88%, 36%)
+
+}
+
+.workinfo-container h3 {
+  color: hsl(197, 88%, 36%)
+
 }
 
 .contactinfo-item {
@@ -54,4 +67,28 @@
 .left-side {
   width: 60%;
   margin-right: 20px;
+}
+
+.bi.bi-envelope-fill {
+  color: hsl(197, 86%, 26%)
+
+}
+
+.bi.bi-telephone-fill {
+  color: hsl(197, 86%, 26%)
+
+}
+
+.bi.bi-geo-alt-fill {
+  color: hsl(197, 86%, 26%)
+
+}
+
+.bi.bi-browser-chrome {
+  color: hsl(197, 86%, 26%)
+
+}
+
+.right-side h3 {
+  color: hsl(197, 88%, 36%)
 }
