@@ -1,11 +1,11 @@
 .editor-container {
   flex: 1;
-  height: 100vh; /* Set the height of the first div as needed */
+  height: 100vh; 
   overflow-y: auto;
   width: fit-content;
   background-color: rgb(255, 255, 255);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 30px;
+  padding-right: 20px;
   border-radius: 10px;
   margin-right: 10px;
   margin-left: 10px;
@@ -27,9 +27,12 @@
 
 .ccv-container {
   background-color: rgb(255, 255, 255);
-  padding: 30px;
   box-shadow: 5px 5px 10px hsl(0, 0%, 39%);
-  width: 750px;
-  height: 1122.52px;
+  width: 765px;
+  height: 1123px;
   margin: 10px;
+}
+
+.print-container {
+  padding: 30px;
 }

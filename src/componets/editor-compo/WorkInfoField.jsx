@@ -161,6 +161,7 @@ function WorkInfoField({ handleFormSubmit, workItems, setFormData }) {
             name="onGoing"
             className=""
             checked={OnGoing}
+            value={OnGoing}
             onChange={handleOnGoing}
           />
         </div>

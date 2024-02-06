@@ -14,12 +14,6 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
 
   const currentDate = new Date();
 
-  const formattedDate = `${currentDate.getFullYear()}-${(
-    currentDate.getMonth() + 1
-  )
-    .toString()
-    .padStart(2, "0")}`;
-
   const handleSchoolValue = (e) => {
     setSchoolValue(e.target.value);
   };
@@ -190,6 +184,7 @@ function EducationInfoField({ handleFormSubmit, educationItems, setFormData }) {
             name="onGoing"
             className=""
             checked={OnGoing}
+            value={OnGoing}
             onChange={handleOnGoing}
           />
         </div>

@@ -1,7 +1,8 @@
 import "./App.css";
 import Editor from "./componets/Editor";
 import ViewForm from "./componets/ViewForm";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useReactToPrint } from 'react-to-print';
 
 function App() {
   const [formData, setFormData] = useState({
@@ -63,6 +64,12 @@ function App() {
     }));
   };
 
+  const printRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => printRef.current,
+  });
+
+
   return (
     <>
       <div className="editor-container">
@@ -72,10 +79,13 @@ function App() {
           handleFormSubmit={handleFormSubmit}
           handleDeleteForm={handleDeleteForm}
           setFormData={setFormData}
+          handlePrint={handlePrint}
         />
       </div>
       <div className="ccv-container">
-        <ViewForm formData={formData} />
+        <div ref={printRef} className="print-container">
+          <ViewForm formData={formData} />
+        </div>
       </div>
     </>
   );
